@@ -10,9 +10,6 @@ app.get('/', function (req, res) {
     else
         res.cookie("helloSent","true").send('Hello World!');
 });
-localStorage.setItem("key","value");
-var value = getItem("key");
-sessionStorage
 
 app.listen(port, function () {
     console.log('Example app listening on port' + port);
