@@ -4,7 +4,7 @@ var firebase = require('firebase');
 var multer = require("multer");
 var uploader = multer({ storage: multer.memoryStorage({}) });
 var app = express();
-var port = process.env.port || 3000;
+var port = process.env.PORT || 3000;
 
 // app.use(uploader.single("img"));
 
@@ -64,7 +64,6 @@ function sendUploadToGCS (req, res, next) {
 
 var fireRef = firebase.database().ref('todos');
 
-var port = process.env.port || 3000;
 
 //Make a new one
 app.post('/todo', uploader.single("img"), sendUploadToGCS, function (req, res, next) {
